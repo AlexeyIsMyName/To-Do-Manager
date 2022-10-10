@@ -22,3 +22,20 @@ enum TaskStatus {
     // завершенная
     case completed
 }
+
+// требования к типу, описывающему сущность "Задача"
+protocol TaskProtocol {
+    // название
+    var title: String { get set }
+    // тип
+    var type: TaskPriority { get set }
+    // статус
+    var status: TaskStatus { get set }
+}
+
+// сущность "Задача"
+struct Task: TaskProtocol {
+    var title: String
+    var type: TaskPriority
+    var status: TaskStatus
+}
