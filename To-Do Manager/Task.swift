@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+// тип задачи
+enum TaskPriority {
+    // текущая
+    case normal
+    // важная
+    case important
+}
+
+// состояние задачи
+enum TaskStatus {
+    // запланированная
+    case planned
+    // завершенная
+    case completed
+}
