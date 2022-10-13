@@ -76,7 +76,10 @@ class TaskListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return getConfiguredTaskCell_constraints(for: indexPath)
+        // ячейка на основе констрейнтов
+//         return getConfiguredTaskCell_constraints(for: indexPath)
+        // ячейка на основе стека
+        return getConfiguredTaskCell_stack(for: indexPath)
     }
     
     // ячейка на основе ограничений
@@ -125,6 +128,31 @@ class TaskListController: UITableViewController {
         }
         
         return resultSymbol
+    }
+    
+    // ячейка на основе стека
+    private func getConfiguredTaskCell_stack(for indexPath: IndexPath) -> UITableViewCell {
+        // загружаем прототип ячейки по идентификатору
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCellStack",
+                                                 for: indexPath) as! TaskCell
+        
+        // получаем данные о задаче, которые необходимо вывести в ячейке
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let currentTask = tasks[taskType]?[indexPath.row] else {
+            return cell }
+        // изменяем текст в ячейке
+        cell.title.text = currentTask.title
+        // изменяем символ в ячейке
+        cell.symbol.text = getSymbolForTask(with: currentTask.status)
+        // изменяем цвет текста
+        if currentTask.status == .planned {
+            cell.title.textColor = .black
+            cell.symbol.textColor = .black
+        } else {
+            cell.title.textColor = .lightGray
+            cell.symbol.textColor = .lightGray
+        }
+        return cell
     }
     
     /*
