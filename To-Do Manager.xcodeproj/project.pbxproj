@@ -80,10 +80,10 @@
 		E74655CF28F4616C004B263E /* To-Do Manager */ = {
 			isa = PBXGroup;
 			children = (
-				E7269ACB28F8504E00F4BF02 /* View */,
 				E74655D028F4616C004B263E /* AppDelegate.swift */,
 				E74655D228F4616C004B263E /* SceneDelegate.swift */,
 				E7F0A59128F46B000094EDBD /* Model */,
+				E7269ACB28F8504E00F4BF02 /* View */,
 				E7F8B3B128F4650C001AD786 /* TaskListController.swift */,
 				E74655D628F4616C004B263E /* Main.storyboard */,
 				E74655D928F4616E004B263E /* Assets.xcassets */,

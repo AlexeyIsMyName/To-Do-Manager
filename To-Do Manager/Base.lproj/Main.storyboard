@@ -12,13 +12,13 @@
         <scene sceneID="RN4-9N-Y0q">
             <objects>
                 <tableViewController id="hVF-yO-xgU" customClass="TaskListController" customModule="To_Do_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JjD-Oo-wpV">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="JjD-Oo-wpV">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCellConstraints" id="rvJ-hw-Tuc">
-                                <rect key="frame" x="0.0" y="50" width="390" height="42.666667938232422"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="390" height="42.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rvJ-hw-Tuc" id="KNT-Mg-eqT">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="42.666667938232422"/>
@@ -54,7 +54,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCellStack" id="vpG-X2-Dlh" customClass="TaskCell" customModule="To_Do_Manager" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92.666667938232422" width="390" height="42.666667938232422"/>
+                                <rect key="frame" x="0.0" y="98" width="390" height="42.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vpG-X2-Dlh" id="KNI-IT-prQ">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="42.666667938232422"/>
