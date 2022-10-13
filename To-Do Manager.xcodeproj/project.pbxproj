@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7269ACE28F8507F00F4BF02 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7269ACD28F8507F00F4BF02 /* TaskCell.swift */; };
 		E74655D128F4616C004B263E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74655D028F4616C004B263E /* AppDelegate.swift */; };
 		E74655D328F4616C004B263E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74655D228F4616C004B263E /* SceneDelegate.swift */; };
 		E74655D828F4616C004B263E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74655D628F4616C004B263E /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7269ACD28F8507F00F4BF02 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		E74655CD28F4616C004B263E /* To-Do Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74655D028F4616C004B263E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E74655D228F4616C004B263E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7269ACB28F8504E00F4BF02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7269ACC28F8505600F4BF02 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7269ACC28F8505600F4BF02 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E7269ACD28F8507F00F4BF02 /* TaskCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E74655C428F4616C004B263E = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +80,7 @@
 		E74655CF28F4616C004B263E /* To-Do Manager */ = {
 			isa = PBXGroup;
 			children = (
+				E7269ACB28F8504E00F4BF02 /* View */,
 				E74655D028F4616C004B263E /* AppDelegate.swift */,
 				E74655D228F4616C004B263E /* SceneDelegate.swift */,
 				E7F0A59128F46B000094EDBD /* Model */,
@@ -158,6 +177,7 @@
 				E74655D128F4616C004B263E /* AppDelegate.swift in Sources */,
 				E7F0A59328F46B160094EDBD /* TasksStorage.swift in Sources */,
 				E74655D328F4616C004B263E /* SceneDelegate.swift in Sources */,
+				E7269ACE28F8507F00F4BF02 /* TaskCell.swift in Sources */,
 				E7F8B3B228F4650C001AD786 /* TaskListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
