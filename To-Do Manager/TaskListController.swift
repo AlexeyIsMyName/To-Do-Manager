@@ -11,7 +11,17 @@ class TaskListController: UITableViewController {
     
     // хранилище задач
     var tasksStorage: TasksStorageProtocol = TasksStorage() // коллекция задач
-    var tasks: [TaskPriority:[TaskProtocol]] = [:]
+    var tasks: [TaskPriority:[TaskProtocol]] = [:] {
+        didSet {
+            for (tasksGroupPriority, tasksGroup) in tasks {
+                tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
+                    let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
+                    let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
+                    return task1position < task2position
+                }
+            }
+        }
+    }
     
     // порядок отображения секций по типам
     // индекс в массиве соответствует индексу секции в таблице
@@ -36,15 +46,6 @@ class TaskListController: UITableViewController {
         // загрузка и разбор задач из хранилища
         tasksStorage.loadTasks().forEach { task in
             tasks[task.type]?.append(task)
-        }
-        
-        // сортировка списка задач
-        for (tasksGroupPriority, tasksGroup) in tasks {
-            tasks[tasksGroupPriority] = tasksGroup.sorted { task1, task2 in
-                let task1position = tasksStatusPosition.firstIndex(of: task1.status) ?? 0
-                let task2position = tasksStatusPosition.firstIndex(of: task2.status) ?? 0
-                return task1position < task2position
-            }
         }
     }
     
@@ -72,7 +73,6 @@ class TaskListController: UITableViewController {
         }
         return currentTasksType.count
     }
-
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,6 +153,28 @@ class TaskListController: UITableViewController {
             cell.symbol.textColor = .lightGray
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 1. Проверяем существование задачи
+        let taskType = sectionsTypesPosition[indexPath.section]
+        guard let _ = tasks[taskType]?[indexPath.row] else {
+            return
+        }
+        
+        // 2. Убеждаемся, что задача не является выполненной
+        guard tasks[taskType]![indexPath.row].status == .planned else {
+            // снимаем выделение со строки
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        
+        // 3. Отмечаем задачу как выполненную
+        tasks[taskType]![indexPath.row].status = .completed
+        
+        // 4. Перезагружаем секцию таблицы
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section),
+                                 with: .automatic)
     }
     
     /*
