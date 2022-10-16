@@ -29,7 +29,6 @@ class TaskListController: UITableViewController {
     
     // порядок отображения задач по их статусу
     var tasksStatusPosition: [TaskStatus] = [.planned, .completed]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // загрузка задач
