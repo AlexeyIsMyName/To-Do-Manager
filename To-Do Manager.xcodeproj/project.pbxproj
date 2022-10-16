@@ -14,6 +14,7 @@
 		E74655DA28F4616E004B263E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74655D928F4616E004B263E /* Assets.xcassets */; };
 		E74655DD28F4616E004B263E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E74655DB28F4616E004B263E /* LaunchScreen.storyboard */; };
 		E772319028F4693B00915974 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772318F28F4693B00915974 /* Task.swift */; };
+		E7E6E62B28FC7DBA00F2916A /* TaskEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E6E62A28FC7DBA00F2916A /* TaskEditController.swift */; };
 		E7F0A59328F46B160094EDBD /* TasksStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F0A59228F46B160094EDBD /* TasksStorage.swift */; };
 		E7F8B3B228F4650C001AD786 /* TaskListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F8B3B128F4650C001AD786 /* TaskListController.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		E74655DE28F4616E004B263E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E74655E528F46238004B263E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E772318F28F4693B00915974 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E7E6E62A28FC7DBA00F2916A /* TaskEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditController.swift; sourceTree = "<group>"; };
 		E7F0A59228F46B160094EDBD /* TasksStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorage.swift; sourceTree = "<group>"; };
 		E7F8B3B128F4650C001AD786 /* TaskListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				E7F0A59128F46B000094EDBD /* Model */,
 				E7269ACB28F8504E00F4BF02 /* View */,
 				E7F8B3B128F4650C001AD786 /* TaskListController.swift */,
+				E7E6E62A28FC7DBA00F2916A /* TaskEditController.swift */,
 				E74655D628F4616C004B263E /* Main.storyboard */,
 				E74655D928F4616E004B263E /* Assets.xcassets */,
 				E74655DB28F4616E004B263E /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 				E74655D328F4616C004B263E /* SceneDelegate.swift in Sources */,
 				E7269ACE28F8507F00F4BF02 /* TaskCell.swift in Sources */,
 				E7F8B3B228F4650C001AD786 /* TaskListController.swift in Sources */,
+				E7E6E62B28FC7DBA00F2916A /* TaskEditController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
