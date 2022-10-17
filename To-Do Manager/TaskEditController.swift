@@ -9,6 +9,7 @@ import UIKit
 
 class TaskEditController: UITableViewController {
     
+    @IBOutlet var taskStatusSwitch: UISwitch!
     @IBOutlet var taskTitle: UITextField!
     @IBOutlet var taskTypeLabel: UILabel!
     
@@ -33,6 +34,11 @@ class TaskEditController: UITableViewController {
         
         // обновление метки в соответствии текущим типом
         taskTypeLabel?.text = taskTitles[taskType]
+        
+        // обновляем статус задачи
+        if taskStatus == .completed {
+                taskStatusSwitch.isOn = true
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,4 +64,18 @@ class TaskEditController: UITableViewController {
             }
         }
     }
+    
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
+        // получаем актуальные значения
+        let title = taskTitle?.text ?? ""
+        let type = taskType
+        let status: TaskStatus = taskStatusSwitch.isOn ? .completed : .planned
+        
+        // вызываем обработчик
+        doAfterEdit?(title, type, status)
+        
+        // возвращаемся к предыдущему экрану
+        navigationController?.popViewController(animated: true)
+    }
+
 }

@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" id="NR3-0t-noy">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fpy-Xy-4P0">
                             <connections>
-                                <segue destination="358-kD-ZWM" kind="show" id="Snu-R0-cQg"/>
+                                <segue destination="358-kD-ZWM" kind="show" identifier="toCreateScreen" id="Snu-R0-cQg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -182,11 +182,30 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jhn-wy-3WY">
-                                        <rect key="frame" x="0.0" y="106" width="390" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="106" width="390" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jhn-wy-3WY" id="lg8-64-e6Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выполнена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dky-JK-j24">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="301" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-3a-A8n">
+                                                    <rect key="frame" x="321" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dky-JK-j24" firstAttribute="leading" secondItem="lg8-64-e6Q" secondAttribute="leadingMargin" id="FXh-VM-5Zp"/>
+                                                <constraint firstItem="4wf-3a-A8n" firstAttribute="leading" secondItem="Dky-JK-j24" secondAttribute="trailing" id="Pc4-wg-d16"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Dky-JK-j24" secondAttribute="bottom" id="Tfv-jG-KxP"/>
+                                                <constraint firstItem="Dky-JK-j24" firstAttribute="top" secondItem="lg8-64-e6Q" secondAttribute="topMargin" id="lZl-KL-Qt1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4wf-3a-A8n" secondAttribute="trailing" id="n7C-ep-B4r"/>
+                                                <constraint firstItem="4wf-3a-A8n" firstAttribute="centerY" secondItem="lg8-64-e6Q" secondAttribute="centerY" id="s22-d3-t40"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -197,8 +216,15 @@
                             <outlet property="delegate" destination="358-kD-ZWM" id="zwc-Xb-Tee"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="OxA-Dg-CET"/>
+                    <navigationItem key="navigationItem" id="OxA-Dg-CET">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="QOI-OS-oCi">
+                            <connections>
+                                <action selector="saveTask:" destination="358-kD-ZWM" id="uJV-wc-cpP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="taskStatusSwitch" destination="4wf-3a-A8n" id="p0u-od-v8v"/>
                         <outlet property="taskTitle" destination="Pid-9H-j2p" id="9uR-Tg-jUK"/>
                         <outlet property="taskTypeLabel" destination="7W7-7u-ZXo" id="9an-Wx-q9O"/>
                     </connections>
