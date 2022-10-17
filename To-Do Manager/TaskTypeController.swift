@@ -9,6 +9,9 @@ import UIKit
 
 class TaskTypeController: UITableViewController {
     
+    // обработчик выбора типа
+    var doAfterTypeSelected: ((TaskPriority) -> Void)?
+    
     // 1. кортеж, описывающий тип задачи
     typealias TypeCellDescription = (type: TaskPriority,
                                      title: String,
@@ -69,6 +72,19 @@ class TaskTypeController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        
+        // получаем выбранный тип
+        let selectedType = taskTypesInformation[indexPath.row].type
+        
+        // вызов обработчика
+        doAfterTypeSelected?(selectedType)
+        
+        // переход к предыдущему экрану
+        navigationController?.popViewController(animated: true)
     }
 }
 

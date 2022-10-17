@@ -43,4 +43,19 @@ class TaskEditController: UITableViewController {
                             numberOfRowsInSection section: Int) -> Int {
         return 3
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTaskTypeScreen" {
+            // ссылка на контроллер назначения
+            let destination = segue.destination as! TaskTypeController
+            // передача выбранного типа
+            destination.selectedType = taskType
+            // передача обработчика выбора типа
+            destination.doAfterTypeSelected = { [unowned self] selectedType in
+                taskType = selectedType
+                // обновляем метку с текущим типом
+                taskTypeLabel?.text = taskTitles[taskType]
+            }
+        }
+    }
 }
