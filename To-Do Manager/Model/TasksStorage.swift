@@ -32,7 +32,7 @@ class TasksStorage: TasksStorageProtocol {
     func loadTasks() -> [TaskProtocol] {
         var resultTasks: [TaskProtocol] = []
         
-        let tasksFromStorage = storage.array(forKey: storageKey) as? [[String:String]] ?? []
+        let tasksFromStorage = storage.array(forKey: storageKey) as? [[String: String]] ?? []
         
         for task in tasksFromStorage {
             guard let title = task[TaskKey.title.rawValue],
