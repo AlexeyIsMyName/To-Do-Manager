@@ -10,7 +10,9 @@ import UIKit
 class TaskListController: UITableViewController {
     
     // хранилище задач
-    var tasksStorage: TasksStorageProtocol = TasksStorage() // коллекция задач
+    var tasksStorage: TasksStorageProtocol = TasksStorage()
+    
+    // коллекция задач
     var tasks: [TaskPriority:[TaskProtocol]] = [:] {
         didSet {
             for (tasksGroupPriority, tasksGroup) in tasks {
@@ -20,6 +22,13 @@ class TaskListController: UITableViewController {
                     return task1position < task2position
                 }
             }
+            
+            // сохранение задач
+            var savingArray: [TaskProtocol] = []
+            tasks.forEach { _, value in
+                savingArray += value
+            }
+            tasksStorage.saveTasks(savingArray)
         }
     }
     
